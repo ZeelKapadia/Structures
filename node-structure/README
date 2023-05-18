@@ -1,0 +1,27 @@
+## Folder structure for project management
+
+# Base folder
+    1. Apis
+    2. config
+    3. controller
+    4. middleware
+    5. module
+
+# Routes folder
+    1. Need to create module wise folder
+
+## Security Guard
+    Level 1: JWTToken - Static Token
+    Level 2: JWTToken/Cipher- Dynamic Token
+
+## Environment Variables
+    1. Used to store Database setting, Private Keys etc
+
+## .gitignore
+    1. Once you start using the GIT then it will use to restric the files or folder to sync with the live folder 
+
+## Git working
+    1. Commit and push the project structre
+    2. Create new branch for each module
+    3. once working branch complated then after merge with the main branch
+    
