@@ -1,0 +1,18 @@
+<!-- Tempate driven -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<div class="container">
+    <h2>Registration Form</h2>
+    <div class="row">
+        <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" ngModel required>
+            </div>
+            <div class="container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>

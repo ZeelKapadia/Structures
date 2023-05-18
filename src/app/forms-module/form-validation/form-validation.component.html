@@ -1,0 +1,63 @@
+<!-- Tempate driven -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<div class="container">
+    <h2>Registration Form</h2>
+    <div class="row">
+        <form [formGroup]="basicForm" (ngSubmit)="onSubmit()" autocomplete="off">
+            <div class="container">
+                <label>Name</label>
+                <input type="text" formControlName="name"
+                    [ngClass]="[basicFormControls.name.errors && (basicFormControls.name.dirty || basicFormControls.name.touched) ? 'has-error' : '']" />
+            </div>
+            <div class="container">
+                <label>Email</label>
+                <input type="email" formControlName="email"
+                    [ngClass]="[basicFormControls.email.errors && (basicFormControls.email.dirty || basicFormControls.email.touched) ? 'has-error' : '']" />
+                <span class="form-text m-b-none text-danger"
+                    *ngIf="basicFormControls.email.errors && (basicFormControls.email.dirty || basicFormControls.email.touched)">
+                    <p class="has-error-text"
+                        *ngIf="basicFormControls.email.errors.required || basicFormControls.email.errors.whitespace">
+                        {{emailmessage}}</p>
+                </span>
+            </div>
+            <div class="container">
+                <label>Mobile </label>
+                <input type="phone" formControlName="mobileNo"
+                    [ngClass]="[basicFormControls.mobileNo.errors && (basicFormControls.mobileNo.dirty || basicFormControls.mobileNo.touched) ? 'has-error' : '']" />
+                <span class="form-text m-b-none text-danger"
+                    *ngIf="basicFormControls.mobileNo.errors && (basicFormControls.mobileNo.dirty || basicFormControls.mobileNo.touched)">
+                    <p class="has-error-text"
+                        *ngIf="basicFormControls.mobileNo.errors.required || basicFormControls.mobileNo.errors.whitespace">
+                        {{mobileMessage}}</p>
+                </span>
+            </div>
+            <div class="container">
+                <label>password</label>
+                <input type="password" formControlName="password" id="password"
+                    [ngClass]="[basicFormControls.password.errors && (basicFormControls.password.dirty || basicFormControls.password.touched) ? 'has-error' : '']" />
+                <span class="form-text m-b-none text-danger"
+                    *ngIf="basicFormControls.password.errors && (basicFormControls.password.dirty || basicFormControls.password.touched)">
+                    <p class="has-error-text"
+                        *ngIf="basicFormControls.password.errors.required || basicFormControls.password.errors.whitespace">
+                        {{passwordMessage}}</p>
+                </span>
+            </div>
+            <div class="container">
+                <label>Confirm Password</label>
+                <input type="password" formControlName="confPass" id="confPass"
+                    [ngClass]="[basicFormControls.confPass.errors && (basicFormControls.confPass.dirty || basicFormControls.confPass.touched) ? 'has-error' : '']" />
+                <span class="form-text m-b-none text-danger"
+                    *ngIf="basicFormControls.confPass.errors && (basicFormControls.confPass.dirty || basicFormControls.confPass.touched)">
+                    <p class="has-error-text"
+                        *ngIf="basicFormControls.confPass.errors.required || basicFormControls.confPass.errors.whitespace">
+                        {{confpassMessage}}</p>
+                </span>
+            </div>
+            <div class="container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>

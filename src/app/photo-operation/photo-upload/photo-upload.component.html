@@ -1,0 +1,21 @@
+<!-- Single -->
+<div>
+    <input type="file" (change)="onFileSelected($event)" #fileInput />
+
+    <br>
+    <div *ngIf="selectedFileURL">
+        <img style="cursor: pointer;" [src]="selectedFileURL" alt="Selected Image" height="60%" width="40%"
+            (click)="showImage()" target="_blank">
+        <button (click)="onDelete()">Delete</button>
+    </div>
+</div>
+<!-- Multiple -->
+<div>
+    <input type="file" #fileInput multiple (change)="onMultiFilesSelected($event)">
+    <br>
+    <div *ngFor="let item of selectedFilesURL">
+        <img style="cursor: pointer;" [src]="item" alt="Selected Image" height="60%" width="40%" (click)="showImage()"
+            target="_blank">
+        <button (click)="onDelete()">Delete</button>
+    </div>
+</div>

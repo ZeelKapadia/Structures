@@ -1,0 +1,13 @@
+<p>
+  <mat-form-field>
+    <mat-select placeholder="Website" [multiple]="true" #multiSelect>
+      <mat-option>
+        <ngx-mat-select-search></ngx-mat-select-search>
+      </mat-option>
+
+      <mat-option *ngFor="let website of websites">
+        {{website.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>

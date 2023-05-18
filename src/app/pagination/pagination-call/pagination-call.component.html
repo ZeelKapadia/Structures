@@ -1,0 +1,11 @@
+<div class="pagination">
+    <a (click)="onFirstPage()">First</a>
+    <a *ngIf="currentPage > 1" (click)="changePage(currentPage - 1)">Previous</a>
+    <a *ngIf="startPage > 1" (click)="changePage(1)">1</a>
+    <span *ngIf="startPage > 2">...</span>
+    <a *ngFor="let page of visiblePages" [class.active]="page === currentPage" (click)="changePage(page)">{{ page }}</a>
+    <span *ngIf="endPage < totalPages - 1">...</span>
+    <a *ngIf="endPage < totalPages" (click)="changePage(totalPages)">{{ totalPages }}</a>
+    <a *ngIf="currentPage < totalPages" (click)="changePage(currentPage + 1)">Next</a>
+    <a (click)="onLastPage()">Last</a>
+</div>

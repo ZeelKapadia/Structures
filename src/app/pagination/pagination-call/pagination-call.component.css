@@ -1,0 +1,14 @@
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: blue;
+}
+
+.pagination span {
+    margin: 0 5px;
+    color: gray;
+}
+
+.pagination a.active {
+    font-weight: bold;
+}
